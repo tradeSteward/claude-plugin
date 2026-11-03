@@ -1,0 +1,10 @@
+{
+    "name": "tradesteward",
+    "version": "1.2.0",
+    "description": "Review, build and backtest tradeSteward options bots from Claude Code. Bots are always saved switched off; you turn them on from the tradeSteward website.",
+    "author": {
+        "name": "tradeSteward",
+        "url": "https://www.tradesteward.com"
+    },
+    "homepage": "https://www.tradesteward.com/kb/account-billing/connect-ai-assistants"
+}

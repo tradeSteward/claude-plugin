@@ -1,0 +1,14 @@
+{
+    "name": "tradesteward",
+    "description": "The tradeSteward connector and skills for Claude Code.",
+    "owner": {
+        "name": "tradeSteward"
+    },
+    "plugins": [
+        {
+            "name": "tradesteward",
+            "source": "./",
+            "description": "Review, build and backtest tradeSteward options bots from Claude Code."
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "tradesteward": {
+            "type": "http",
+            "url": "https://api.tradesteward.com/mcp",
+            "headers": {
+                "Accept-Encoding": "gzip"
+            }
+        }
+    }
+}
