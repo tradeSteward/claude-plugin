@@ -22,4 +22,8 @@ Then run `/mcp`, choose `tradesteward` and sign in to your tradeSteward account.
 
 You need a tradeSteward plan that includes API access: a Trader plan for bots (the other Trader plans below Trader Unlimited can only view them), or Backtick Professional for backtesting.
 
+## Contributing
+
+Pull requests are welcome. The skills in `skills/` are generated from the tradeSteward server, so we do not merge a change to a skill here. We make the change on our side, regenerate the skills and publish them to this repository, then close your pull request with a link to the commit. Changes to the plugin manifest, `.mcp.json` and this README are merged here directly.
+
 Help: https://www.tradesteward.com/kb/account-billing/connect-ai-assistants
