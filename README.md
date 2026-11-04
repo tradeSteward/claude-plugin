@@ -89,7 +89,7 @@ Pull requests are welcome. The skills in `skills/` are generated from the tradeS
 
 ## Help and support
 
-- Guide (sign in to tradesteward.com first): [Connect an AI assistant](https://www.tradesteward.com/kb/account-billing/connect-ai-assistants)
+- Guide (sign in to tradesteward.com first): [Connect an AI assistant](https://www.tradesteward.com/kb/connected-apps/connect-ai-assistants)
 - Support and security reports: [support@tradesteward.com](mailto:support@tradesteward.com)
 
 This repository is published by tradeSteward, LLC. It is not affiliated with or endorsed by Anthropic. See [LICENSE](LICENSE).
