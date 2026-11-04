@@ -1,0 +1,19 @@
+Copyright (c) 2026 tradeSteward, LLC. All rights reserved.
+
+This repository holds the tradeSteward plugin for Claude Code: its manifests, its
+connector configuration and its skills (the "Software").
+
+You may install and use the Software, unmodified, with a tradeSteward account, under
+the tradeSteward Terms of Service (https://www.tradesteward.com/terms). You may not
+copy, modify, publish, distribute, sublicense or sell the Software, or any part of it,
+except as needed to install and use it as described above.
+
+tradeSteward, Backtick and SweepTick are trademarks of tradeSteward, LLC. Claude and
+Claude Code are trademarks of Anthropic, PBC. This Software is not affiliated with or
+endorsed by Anthropic.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL TRADESTEWARD, LLC BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH
+THE SOFTWARE OR ITS USE. NOTHING IN THE SOFTWARE IS INVESTMENT ADVICE.

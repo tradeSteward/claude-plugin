@@ -1,29 +1,95 @@
 # tradeSteward for Claude Code
 
-Review, build and backtest your tradeSteward options bots from Claude Code.
+Review, build and backtest your [tradeSteward](https://www.tradesteward.com) options bots from Claude Code.
 
-This plugin adds the tradeSteward connector (a remote MCP server at `https://api.tradesteward.com/mcp`) and eight skills: `build-bot`, `review-bot-performance`, `analyze-stop-fills`, `analyze-fill-slippage`, `backtest-strategy`, `backtest-to-bot`, `build-report` and `build-portfolio`.
+This plugin connects Claude Code to your tradeSteward account and adds eight skills for the work people do most: reviewing how bots traded, studying fills, building bots, and testing strategies in Backtick. Claude works only within the permissions you grant when you sign in, and it can never put a bot into live trading.
+
+## What's included
+
+- **The tradeSteward connector**, a remote MCP server at `https://api.tradesteward.com/mcp`. You sign in on tradesteward.com; Claude never sees your password or your broker logins.
+- **Eight skills**, listed below.
+- **Bot and Backtick tools** that Claude calls for you: reading bots, settings, trades, logs and performance; building and checking bots; creating, running and reading Backticks and SweepTicks.
+
+## Requirements
+
+- [Claude Code](https://claude.com/claude-code).
+- A tradeSteward account with API and MCP access turned on. Access is turned on per account. To ask for it, email [support@tradesteward.com](mailto:support@tradesteward.com).
+- A plan that includes it:
+
+| Plan | What Claude can do |
+| --- | --- |
+| Trader Unlimited | Read your bots, create bots, edit bots that are not live, turn a bot off and pause all trading |
+| Other Trader plans | Read your bots, their settings, performance, trades and logs |
+| Backtick Professional | Read, create and run Backticks and SweepTicks |
 
 ## Install
+
+In Claude Code, run:
 
 ```
 /plugin marketplace add tradesteward/claude-plugin
 /plugin install tradesteward@tradesteward
 ```
 
-Then run `/mcp`, choose `tradesteward` and sign in to your tradeSteward account. On the consent page you choose exactly what Claude may do.
+Then sign in:
 
-## What it can and cannot do
+1. Run `/mcp` and choose `tradesteward`.
+2. Sign in to your tradeSteward account in the browser window that opens.
+3. On the consent page, choose exactly what Claude may do, then approve.
 
-- It can read your bots, their performance, trades and logs, and your Backticks.
-- On Trader Unlimited it can also create bots and edit bots that are not live, turn a bot off and pause all trading. The trading engine takes a short time to observe a pause or a bot being turned off, and an order already at the broker may still fill. On the other Trader plans it can only read bots.
-- With Backtick Professional it can create and run Backticks.
-- It can never turn a bot on, resume trading or change a bot that is live. Bots it creates are saved switched off. You turn them on from the tradeSteward website after reviewing them.
+To update later, run `/plugin marketplace update tradesteward`.
 
-You need a tradeSteward plan that includes API access: a Trader plan for bots (the other Trader plans below Trader Unlimited can only view them), or Backtick Professional for backtesting.
+## Skills
+
+Claude picks a skill on its own when your request fits one. You can also run one directly, for example `/tradesteward:review-bot-performance`.
+
+| Skill | What it does |
+| --- | --- |
+| `review-bot-performance` | Reviews how your bots have traded: profit and loss, win rate, and the trades behind the numbers. |
+| `analyze-stop-fills` | Shows where your stops filled compared with where they were set, and against the last quote. Changes nothing. |
+| `analyze-fill-slippage` | Measures where your entries and stops filled inside the bid and ask and how long they took, then matches Backtick's slippage and delay to them. Builds a comparison Backtick only when you ask. |
+| `build-bot` | Turns a strategy you describe into a bot, saved switched off for you to review. |
+| `backtest-strategy` | Sets up a Backtick for a strategy you describe, runs it and reads the results. |
+| `backtest-to-bot` | Saves a position from a completed Backtick as a bot, switched off for you to review. |
+| `build-portfolio` | Builds a page showing how a strategy's tested cells share a number of contracts you choose, with buttons to test the portfolio or create its bots. |
+| `build-report` | Turns bot or Backtick results into a page, dashboard, doc or deck in tradeSteward's style. |
+
+## Try asking
+
+- "How did my bots do last month? Which one lost the most, and why?"
+- "Where did my stops fill compared with where they were set?"
+- "Build a 45 DTE put credit spread bot on SPX at 10 delta."
+- "Backtest a 0 DTE iron condor on SPX entering at 10:00, then sweep the short delta from 10 to 20."
+- "Turn the best position from my last Backtick into a bot."
+
+## Safety
+
+- It can never turn a bot on, resume trading or change a bot that is live.
+- Every bot it creates is saved switched off. You review it and turn it on from the tradeSteward website.
+- Turning a bot off and pausing trading take effect within moments, and an order already at the broker may still fill.
+- A Backtick is a simulation of past markets, not a forecast.
+- Claude is told to treat names, notes, tags and log lines from your account as data, never as instructions.
+
+## Privacy
+
+Claude receives the account data its tools return, such as bot settings, trades, logs and Backtick results, and handles it under your agreement with Anthropic. Your tradeSteward password and your broker logins never leave tradeSteward. See the [tradeSteward privacy policy](https://www.tradesteward.com/privacy).
+
+To disconnect, remove the connection on the API Access page of your tradeSteward account, in the account menu.
+
+## Troubleshooting
+
+- **A tool or skill is missing or refused.** The connection was not given that permission when you signed in, or your plan does not include it. Sign in again from `/mcp` and choose the permissions you need.
+- **Sign-in does not go through.** Check that API and MCP access is turned on for your account; if it is not, email support.
+- **"Changes through the tradeSteward API are temporarily turned off."** tradeSteward has paused changes for a while. Reading, turning bots off and pausing trading still work. Try the change again later.
+- **A request is refused for coming too often.** Wait a moment and ask again.
 
 ## Contributing
 
 Pull requests are welcome. The skills in `skills/` are generated from the tradeSteward server, so we do not merge a change to a skill here. We make the change on our side, regenerate the skills and publish them to this repository, then close your pull request with a link to the commit. Changes to the plugin manifest, `.mcp.json` and this README are merged here directly.
 
-Help: https://www.tradesteward.com/kb/account-billing/connect-ai-assistants
+## Help and support
+
+- Guide (sign in to tradesteward.com first): [Connect an AI assistant](https://www.tradesteward.com/kb/account-billing/connect-ai-assistants)
+- Support and security reports: [support@tradesteward.com](mailto:support@tradesteward.com)
+
+This repository is published by tradeSteward, LLC. It is not affiliated with or endorsed by Anthropic. See [LICENSE](LICENSE).
