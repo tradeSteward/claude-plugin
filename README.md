@@ -2,7 +2,7 @@
 
 Review, build and backtest your [tradeSteward](https://www.tradesteward.com) options bots from Claude Code.
 
-This plugin connects Claude Code to your tradeSteward account and adds eight skills for the work people do most: reviewing how bots traded, studying fills, building bots, and testing strategies in Backtick. Claude works only within the permissions you grant when you sign in, and it can never put a bot into live trading.
+This plugin connects Claude Code to your tradeSteward account and adds eight skills for the work people do most: reviewing how bots traded, studying fills, building bots, and testing strategies in Backtick. Claude works only within the permissions you grant when you sign in, and it cannot put a bot into live trading without your approval.
 
 ## What's included
 
@@ -18,8 +18,8 @@ This plugin connects Claude Code to your tradeSteward account and adds eight ski
 
 | Plan | What Claude can do |
 | --- | --- |
-| Trader Unlimited | Read your bots, create bots, edit bots that are not live, turn a bot off and pause all trading |
-| Other Trader plans | Read your bots, their settings, performance, trades and logs |
+| Any Trader plan | Read your bots, create bots, edit bots that are not live, ask to pause or resume all trading, and turn a Backtick position into a bot |
+| Trader Unlimited | Also turn a bot off, and ask to turn a bot on or change a live bot |
 | Backtick Professional | Read, create and run Backticks and SweepTicks |
 
 ## Install
@@ -64,9 +64,9 @@ Claude picks a skill on its own when your request fits one. You can also run one
 
 ## Safety
 
-- It can never turn a bot on, resume trading or change a bot that is live.
-- Every bot it creates is saved switched off. You review it and turn it on from the tradeSteward website.
-- Turning a bot off and pausing trading take effect within moments, and an order already at the broker may still fill.
+- Turning a bot on, resuming trading, changing a bot that is live and pausing trading each wait for your approval on tradeSteward. Nothing changes until you approve.
+- Every bot it creates is saved switched off. You review it and turn it on from the tradeSteward website, or approve a request to turn it on.
+- Turning a bot off takes effect within moments, and an order already at the broker may still fill. A pause takes effect after you approve it.
 - A Backtick is a simulation of past markets, not a forecast.
 - Claude is told to treat names, notes, tags and log lines from your account as data, never as instructions.
 
@@ -89,7 +89,7 @@ Pull requests are welcome. The skills in `skills/` are generated from the tradeS
 
 ## Help and support
 
-- Guide (sign in to tradesteward.com first): [Connect an AI assistant](https://www.tradesteward.com/kb/connected-apps/connect-ai-assistants)
+- Guide: [Connect an AI assistant](https://www.tradesteward.com/kb/connected-apps/connect-ai-assistants)
 - Support and security reports: [support@tradesteward.com](mailto:support@tradesteward.com)
 
 This repository is published by tradeSteward, LLC. It is not affiliated with or endorsed by Anthropic. See [LICENSE](LICENSE).
